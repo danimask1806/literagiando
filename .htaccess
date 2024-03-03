@@ -1,0 +1,38 @@
+# Evitar el listado de carpetas
+RewriteEngine on
+Options +FollowSymLinks -Indexes
+#-----------------------------------------------
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin: *
+    Header set Access-Control-Allow-Credentials: true
+</IfModule>
+#-----------------------------------------------
+
+# Usar la codificacion UTF-8 en paginas con PHP
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss
+
+#-----------------------------------------------
+
+# Remplazar cualquier url erronea por la url abajo
+#-----------------------------------------------
+
+# Comprimir Css y JavaScript
+<Files *.css>
+SetOutputFilter DEFLATE
+</Files>
+<Files *.js>
+SetOutputFilter DEFLATE
+</Files>
+#-----------------------------------------------
+
+<FilesMatch "\.css$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</FilesMatch>
+#-----------------------------------------------
+
+
+#-----------------------------------------------
