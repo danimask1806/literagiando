@@ -1,5 +1,5 @@
 <?php
-	$conexion = mysqli_connect('host del servidor','usuario del servidor','contraseña del servidor');
-	mysqli_select_db($conexion,'base de datos del servidor');
+	$conexion = mysqli_connect('localhost','root','');
+	mysqli_select_db($conexion,'literagiando');
 	$conexion->set_charset('UTF8');
 ?>

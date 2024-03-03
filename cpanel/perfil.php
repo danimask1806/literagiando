@@ -52,7 +52,7 @@
 
 <?php
 	// Obtener los datos actuales del usuario
-	$query = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
+	$query = "SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
 	$resultado = mysqli_query($conexion, $query);
 	
 	if (mysqli_num_rows($resultado) > 0) {
@@ -314,10 +314,10 @@
             }
 			
 			// Actualizar la columna de la base de datos con el nuevo nombre de imagen
-            $query = "UPDATE usuarios SET nombre_completo='$nombre_completo', sexo='$sexo', telefono='$telefono', foto_perfil='$nombreImagen' WHERE id_usuario = '$id_usuario'";
+            $query = "UPDATE usuario SET nombre_completo='$nombre_completo', sexo='$sexo', telefono='$telefono', foto_perfil='$nombreImagen' WHERE id_usuario = '$id_usuario'";
         } else {
             // No se subió una nueva imagen, actualizar los datos sin cambiar la imagen
-            $query = "UPDATE usuarios SET nombre_completo='$nombre_completo', sexo='$sexo', telefono='$telefono', WHERE id_usuario = '$id_usuario'";
+            $query = "UPDATE usuario SET nombre_completo='$nombre_completo', sexo='$sexo', telefono='$telefono', WHERE id_usuario = '$id_usuario'";
         }
 		
 		if (mysqli_query($conexion, $query)) {

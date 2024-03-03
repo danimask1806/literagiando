@@ -40,7 +40,7 @@
 <?php
     require_once('../includes/conexion.php');
 	// Obtener los datos actuales del usuario
-	$query = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
+	$query = "SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
 	$resultado = mysqli_query($conexion, $query);
             
 	if (mysqli_num_rows($resultado) > 0) {

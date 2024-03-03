@@ -56,7 +56,7 @@
 										<div class="roww">
 											<div class="col-lg-11 pt-5" style="margin: 0 auto;">
 												<form method="post" action="agregar_usuarios.php" enctype="multipart/form-data">
-													<input type="hidden" name="fecha_creacion" value="<?php echo date('Y-m-d'); ?>" />
+													<input type="hidden" name="fecha_registro" value="<?php echo date('Y-m-d'); ?>" />
 													<div class="login-form mb-10">
 														<h2 class="login-title-1 mb-2">
 															<center>
@@ -289,7 +289,7 @@
 		$correo = $_POST["correo"];
 		$usuario = $_POST["usuario"];
 		$password = $_POST["password"]; // Contraseña sin encriptar
-		$fecha_creacion = $_POST["fecha_creacion"];
+		$fecha_registro = $_POST["fecha_registro"];
 		$acceso = $_POST['acceso'];
 		
 		// Encriptar la contraseña con bcrypt
@@ -334,7 +334,7 @@
 		}
 		
 		// Verificar duplicados en identificación
-		$query_identificacion = "SELECT id_usuario FROM usuarios WHERE identificacion = '$identificacion'";
+		$query_identificacion = "SELECT id_usuario FROM usuario WHERE identificacion = '$identificacion'";
 		$resultado_identificacion = mysqli_query($conexion, $query_identificacion);
 		if (mysqli_num_rows($resultado_identificacion) > 0) {
 	echo '
@@ -367,7 +367,7 @@
 		}
 		
 		// Verificar duplicados en correo
-		$query_correo = "SELECT id_usuario FROM usuarios WHERE correo = '$correo'";
+		$query_correo = "SELECT id_usuario FROM usuario WHERE correo = '$correo'";
 		$resultado_correo = mysqli_query($conexion, $query_correo);
 		if (mysqli_num_rows($resultado_correo) > 0) {
 	echo '
@@ -400,7 +400,7 @@
 		}
 		
 		// Verificar duplicados en usuario
-		$query_usuario = "SELECT id_usuario FROM usuarios WHERE usuario = '$usuario'";
+		$query_usuario = "SELECT id_usuario FROM usuario WHERE usuario = '$usuario'";
 		$resultado_usuario = mysqli_query($conexion, $query_usuario);
 		if (mysqli_num_rows($resultado_usuario) > 0) {
 	echo '
@@ -435,8 +435,8 @@
 			$rutaGuardada = "../recursos/img/perfiles/" . $nombreImagen;
 			move_uploaded_file($foto_perfiltemp, $rutaGuardada);
 		
-			// Insertar los datos en la tabla usuarios con el nombre único de la imagen
-			$query_insert = "INSERT INTO usuarios (rol, identificacion, nombre_completo, sexo, telefono, correo, usuario, password, foto_perfil, fecha_creacion, acceso) VALUES ('$rol', '$identificacion', '$nombre_completo', '$sexo', '$telefono', '$correo', '$usuario', '$hashed_password', '$nombreImagen', '$fecha_creacion', '$acceso')";
+			// Insertar los datos en la tabla usuario con el nombre único de la imagen
+			$query_insert = "INSERT INTO usuario (rol, identificacion, nombre_completo, sexo, telefono, correo, usuario, password, foto_perfil, fecha_registro, acceso) VALUES ('$rol', '$identificacion', '$nombre_completo', '$sexo', '$telefono', '$correo', '$usuario', '$hashed_password', '$nombreImagen', '$fecha_registro', '$acceso')";
 			if (mysqli_query($conexion, $query_insert)) {
 	echo '
 		<script>

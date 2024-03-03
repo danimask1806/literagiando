@@ -45,7 +45,7 @@
 						<div class="row h-100">
 							<div class="col-lg-12">
 								<div class="breadcrumb-item">
-									<h2 class="breadcrumb-headingg text-color-sobre-imagen pt-3" style="text-shadow: 1px 1px 1px #060606;">Centro de identificación</h2>
+									<h2 class="breadcrumb-heading text-color-sobre-imagen pt-3" style="text-shadow: 1px 1px 1px #060606;">Centro de identificación</h2>
 									<div id="login"></div>
 								</div>
 							</div>
@@ -140,7 +140,7 @@
 		$password = $_POST["password"];
 		
 		// Buscar el usuario en la base de datos
-		$query = "SELECT * FROM usuarios WHERE usuario='$usuario' AND acceso=1";
+		$query = "SELECT * FROM usuario WHERE usuario='$usuario' AND acceso=1";
 		$resultado = $conexion->query($query);
 		
 		if ($resultado->num_rows > 0) {
@@ -151,6 +151,7 @@
 			if (password_verify($password, $hashed_password)) {
 				session_start();
 				$_SESSION["id_usuario"] = $fila["id_usuario"];
+				//$_SESSION["correo"] = $fila["correo"];
 				header("Location: cpanel/home.php");
 				exit;
 			} else {

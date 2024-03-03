@@ -90,11 +90,13 @@
 																		<th scope="col">Administrar</th>
 																	</tr>
 <?php
-	// Consultar la tabla de usuarios
-	$query = "SELECT usuarios.id_usuario, usuarios.identificacion, usuarios.nombre_completo, usuarios.sexo, usuarios.telefono, usuarios.correo, usuarios.usuario, usuarios.foto_perfil, usuarios.acceso, usuarios.fecha_creacion, roles.rol
-	FROM usuarios
-	LEFT JOIN roles ON usuarios.rol = roles.id_rol
-	WHERE usuarios.id_usuario NOT IN (1)";
+
+	// Consultar la tabla de usuario
+	$query = "SELECT usuario.id_usuario,usuario.identificacion,usuario.nombre_completo,usuario.sexo,usuario.telefono,usuario.correo,usuario.usuario,usuario.foto_perfil,usuario.acceso,usuario.fecha_registro, roles.nombre_rol
+	FROM usuario
+	LEFT JOIN roles ON usuario.rol = roles.idrol
+	WHERE usuario.id_usuario NOT IN (1)";
+
 	$resultado = mysqli_query($conexion, $query);
 	if ($resultado !== false) {
 		if ($resultado->num_rows > 0) {
@@ -200,7 +202,8 @@
 																			' . $fila["correo"] . '
 																		</td>
 																		<td style="width: 250px; align-items: center;">
-																			' . $fila["fecha_creacion"] . '
+
+																			' . $fila["fecha_registro"] . '
 																		</td>
 																		<td style="width: 140px; align-items: center;">
 																			<img src="'.base_urls.'recursos/img/perfiles/'.$fila['foto_perfil'].$codificacion.'" heigth="100%" />

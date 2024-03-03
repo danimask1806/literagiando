@@ -52,7 +52,7 @@
 
 <?php
 	// Obtener los datos actuales del usuario
-	$query = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
+	$query = "SELECT * FROM usuario WHERE id_usuario = '$id_usuario'";
 	$resultado = mysqli_query($conexion, $query);
 	
 	// Verificar si el usuario tiene el privilegio adecuado (id=1)

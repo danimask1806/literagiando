@@ -62,11 +62,11 @@
 		
 		// Consultar la tabla de préstamo
 		$query = "SELECT prestamos.id_prestamo,
-		usuarios.id_usuario, usuarios.identificacion, usuarios.nombre_completo, usuarios.correo,
+		usuario.id_usuario,usuario.identificacion,usuario.nombre_completo,usuario.correo,
 		libros_1.titulo AS libro_1, libros_2.titulo AS libro_2, libros_3.titulo AS libro_3,
 		prestamos.fecha_prestamo, prestamos.fecha_devolucion, prestamos.estado, prestamos.permiso
 		FROM prestamos
-		LEFT JOIN usuarios ON prestamos.id_usuario = usuarios.id_usuario
+		LEFT JOIN usuario ON prestamos.id_usuario =usuario.id_usuario
 		LEFT JOIN libros AS libros_1 ON prestamos.id_libro_1 = libros_1.id_libro
 		LEFT JOIN libros AS libros_2 ON prestamos.id_libro_2 = libros_2.id_libro
 		LEFT JOIN libros AS libros_3 ON prestamos.id_libro_3 = libros_3.id_libro

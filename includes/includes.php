@@ -1,7 +1,7 @@
 <?php
 	// Indicamos conts(variables fijas) de la url principal(con www o sin www)
-	const base_url = 'http://www. url del servidor/';
-	const base_urls = 'https://www. url del servidor/';
+	const base_url = 'https://localhost/Literagiando/literagiando59/';
+	const base_urls = 'https://localhost/Literagiando/literagiando59/';
 	
 	// Indicamos conts(variables fijas) de los metadatos a trabajar con el navegador
 	const base_con_indexacion = '<meta name="robots" content="index,follow,noodp,noydir" />';

@@ -15,11 +15,11 @@
                                                 </a>
                                             </li>
 <?php
-	$query = "SELECT usuarios.id_usuario, usuarios.identificacion, usuarios.nombre_completo, usuarios.sexo, usuarios.telefono, usuarios.correo, usuarios.usuario, usuarios.foto_perfil, usuarios.acceso,
-	roles.rol as rol
-	FROM usuarios
-	INNER JOIN roles ON usuarios.rol = roles.id_rol
-	WHERE usuarios.id_usuario = $id_usuario";
+	$query = "SELECT usuario.id_usuario,usuario.identificacion,usuario.nombre_completo,usuario.sexo,usuario.telefono,usuario.correo,usuario.usuario,usuario.foto_perfil,usuario.acceso,
+	roles.nombre_rol as rol
+	FROM usuario
+	INNER JOIN roles ON usuario.rol = roles.idrol
+	WHERE usuario.id_usuario = $id_usuario";
 	$resultado = $conexion->query($query);
 	$fila = $resultado->fetch_assoc();
 ?>

@@ -8,7 +8,7 @@
 		require_once('../includes/conexion.php');
 		
 		// Consulta SQL para obtener el rol del usuario
-		$query = "SELECT rol FROM usuarios WHERE id_usuario = $id_usuario";
+		$query = "SELECT rol FROM usuario WHERE id_usuario = $id_usuario";
 		$resultado = $conexion->query($query);
 		
 		if ($resultado) {

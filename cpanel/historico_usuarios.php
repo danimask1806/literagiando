@@ -75,10 +75,10 @@ $pdf->SetLineHeight(array(5, 2, 2, 2, 2, 2, 2, 2, 2));
 
 $pdf->SetLineHeight(8);
 
-$query = "SELECT usuarios.id_usuario, usuarios.identificacion, usuarios.nombre_completo, usuarios.sexo, usuarios.telefono, usuarios.correo, usuarios.usuario, accesos.acceso, roles.rol
-FROM usuarios
-LEFT JOIN accesos ON usuarios.acceso = accesos.id_acceso
-LEFT JOIN roles ON usuarios.rol = roles.id_rol WHERE usuarios.id_usuario NOT IN (1)";
+$query = "SELECT usuario.id_usuario, usuario.identificacion, usuario.nombre_completo, usuario.sexo, usuario.telefono, usuario.correo, usuario.usuario, accesos.acceso, roles.nombre_rol
+FROM usuario
+LEFT JOIN accesos ON usuario.acceso = accesos.id_acceso
+LEFT JOIN roles ON usuario.rol = roles.idrol WHERE usuario.id_usuario NOT IN (1)";
 $resultado = mysqli_query($conexion, $query);
 
 $pdf->SetFont('Arial', '', 10);
