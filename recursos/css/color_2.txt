@@ -1,0 +1,73 @@
+#8401fe
+
+#4e0b6a
+
+#7b0cac
+
+#580c79
+
+#18e3ff
+
+#650091
+
+#3f87ff
+
+#bedde9
+
+#007aff
+
+#c0c0c0
+
+#000000ab
+
+#0200044f
+
+#4e0b6a30 - #ddd1e3
+
+border-radius: 3px;
+overflow: hidden;
+box-shadow: 1px 1px 5px 5px #000000ab;
+
+
+.a1  {
+  color: #000;
+}
+.a2  {
+  color: #fff;
+}
+.a3 {
+  color: #7b0cac;
+}
+.a4  {
+  color: #580c79;
+}
+.a5, .a1:hover, .a2:hover, .a3:hover, .a4:hover, .a5:hover, .a6:hover, .a7:hover, .a8:hover, .a9:hover, .a0:hover {
+  color: #18e3ff;
+}
+.a6  {
+  color: #650091;
+}
+.a7  {
+  color: #3f87ff;
+}
+.a8  {
+  color: #c0c0c0;
+}
+.a9  {
+  color: #4e0b6a;
+}
+.a0  {
+  color: #000000ab;
+}
+
+
+.a1{color: #000}.a2{color: #fff}.a3{color: #7b0cac}.a4{color: #580c79}.a5,.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover,.a6:hover,.a7:hover,.a8:hover,.a9:hover,.a0:hover{color: #18e3ff}.a6{color: #650091}.a7{color: #3f87ff}.a8{color: #c0c0c0}.a9{color: #4e0b6a}.a0{color: #000000ab}
+
+
+
+background-color: #4e0b6a;
+color: #fff;
+font-size: 24px;
+
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
